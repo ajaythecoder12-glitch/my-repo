@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cum Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            font-size: larger;
+            color: black;
+        }
+        .payment-btn {
+            display: block;
+            margin: 15px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .payment-btn:hover {
+            background-color: #218838;
+        }
+        div {
+            text-align: center;
+        }
+        .btn {
+            display: block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        /* Initially hide home page content */
+        #homePage, #videosPage {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Payment Section -->
+    <div id="paymentPage" class="container">
+        <h2>Make Payment of ₹35 to Join the Website</h2>
+        <p>Find the best Desi, Hidden, and many more exciting videos.</p>
+        <a class="payment-btn" href="upi://pay?pa=ajaychamp22@okaxis&pn=Ajay&mc=0000&tid=123456&tr=123456789&tn=Website+Membership&am=35&cu=INR" id="paymentBtn">Pay ₹35 to Join</a>
+    </div>
+
+    <!-- Home Page (Initially Hidden) -->
+    <div id="homePage">
+        <h1>Welcome to the Home Page</h1>
+        <p>This site provides 15 videos for ₹50. After payment, you can access the videos below.</p>
+        <a href="javascript:void(0)" class="btn" onclick="goToVideos()">Go to Videos</a>
+    </div>
+
+    <!-- Videos Page (Initially Hidden) -->
+    <div id="videosPage">
+        <h1>Videos</h1>
+        <div>
+            <h2>Girlfriend sucking BF Cock in Car.</h2>
+            <video id="video1" controls width="350" height="350">
+                <source src="myvid.WebM" type="video/webm">
+                <source src="myvid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <hr>
+        <div>
+            <h2>Senior Classmate fucking Junior female.</h2>
+            <video id="video2" controls width="350" height="350">
+                <source src="video2.webm" type="video/webm">
+                <source src="video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+        </div>
+        <hr>
+    </div>
+
+    <script>
+        function makePayment() {
+            // Simulating a payment action. If successful, show the home page.
+            alert("Payment successful! Now you can access the content.");
+            document.getElementById('paymentPage').style.display = 'none';
+            document.getElementById('homePage').style.display = 'block';
+        }
+
+        function goToVideos() {
+            // Show the videos page when the user clicks on "Go to Videos".
+            document.getElementById('homePage').style.display = 'none';
+            document.getElementById('videosPage').style.display = 'block';
+        }
+
+        // Trigger payment after clicking the payment button
+        document.getElementById('paymentBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            makePayment(); // Simulate the payment confirmation process
+        });
+    </script>
+
+</body>
+</html>
